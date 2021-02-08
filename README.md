@@ -1,6 +1,11 @@
 # No Pain No gain Front
 
-Instalar las librerías
+1) Instalar las librerías
 ```
 npm install
+```
+
+2) Para ejecutar el front
+```
+ng serve -o
 ```
