@@ -9,19 +9,29 @@ import { AppComponent } from './app.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { SedeComponent } from './pages/sede/sede.component';
+import { CiudadComponent } from './pages/ciudad/ciudad.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    UsuarioComponent,
+    SedeComponent,
+    CiudadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

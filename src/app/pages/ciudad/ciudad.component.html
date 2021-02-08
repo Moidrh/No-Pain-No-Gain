@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="py-4">
+  <div class="card">
+    <h5 class="card-header">Buscar usuarios por ciudad</h5>
+    <div class="card-body">
+      <form action="">
+        <input class="card-title form-control mr-sm-2" 
+        type="text" placeholder="Ingrese la ciudad" 
+        (keyup.enter)="buscarUsuarioByCiudad(nombreCiudad.value)" #nombreCiudad>
+        <ul *ngFor="let u of usuarios">
+          <p class="card-text">{{u.username}}</p>
+        </ul>
+      </form>
+      
+    </div>
+  </div>
+  
+  <div class="py-4">
+    <div class="card">
+      <h5 class="card-header">Crear Ciudad</h5>
+      <div class="card-body">
+        <form (ngSubmit)="createCiudad(c)"
+              #c = "ngForm"
+        >
+
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el nombre de la ciudad</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="ciudad.name"
+                           placeholder="Nombre de la ciudad">
+          </div>
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el nombre de la sede que pertenece a esa ciudad</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="sede.name"
+                           placeholder="Nombre de la sede">
+          
+          </div>
+          <button class="btn btn-primary" type="submit">Crear</button>
+        </form>
+      </div>
+    </div>
+</div>

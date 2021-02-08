@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="py-4">
+  <div class="card">
+    <h5 class="card-header">Buscar Todas las sedes de una ciudad</h5>
+    <div class="card-body">
+      <form action="">
+        <input class="card-title form-control mr-sm-2" 
+        type="text" placeholder="Ingrese la ciudad" 
+        (keyup.enter)="buscarSedes(nombreSede.value)" #nombreSede>
+        <ul *ngFor="let s of sedes">
+          <p class="card-text">{{s.name}}</p>
+        </ul>
+      </form>
+      
+    </div>
+  </div>
+  
+  <div class="py-4">
+    <div class="card">
+      <h5 class="card-header">Crear Sede</h5>
+      <div class="card-body">
+        <form (ngSubmit)="createSede(s)"
+              #s = "ngForm"
+        >
+
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el nombre</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="sede.name"
+                           placeholder="Nombre de la sede">
+          
+          </div>
+          <button class="btn btn-primary" type="submit">Crear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>

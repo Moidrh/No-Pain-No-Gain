@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<div class="py-4">
+  <div class="card">
+    <h5 class="card-header">Buscar Usuarios por Sede</h5>
+    <div class="card-body">
+      <form action="">
+        <input class="card-title form-control mr-sm-2" 
+        type="text" placeholder="Ingrese la sede" 
+        (keyup.enter)="buscarUsuariosPorSede(nombreSede.value)" #nombreSede>
+        <ul *ngFor="let u of usuarios">
+          <p class="card-text">{{u.username}}</p>
+        </ul>
+      </form>
+      
+    </div>
+  </div>
+  
+  <div class="py-4">
+    <div class="card">
+      <h5 class="card-header">Crear Usuario</h5>
+      <div class="card-body">
+        <form (ngSubmit)="createUsuario(u)"
+              #u = "ngForm"
+        >
+
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el email del usuario</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="usuario.username"
+                           placeholder="Email del usuario">
+          </div>
+
+          <div class="py-4">
+          <h5 class="card-title">Ingrese la contraseña del usuario</h5>
+          <input class="input100" 
+                          type="password" 
+                          name="password" 
+                          required
+                          minlength="3"
+                          [(ngModel)]="usuario.password"
+                          placeholder="Contraseña del usuario">
+          </div>
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el nombre de la ciudad a la que pertenece</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="ciudad.name"
+                           placeholder="Nombre de la ciudad">
+          
+          </div>
+
+          <div class="py-4">
+            <h5 class="card-title">Ingrese el nombre de la sede a la que pertenece</h5>
+            <input class="input100" 
+                           type="text" 
+                           name="name" 
+                           required
+                           minlength="3"
+                           [(ngModel)]="sede.name"
+                           placeholder="Nombre de la sede">
+          
+          </div>
+          <button class="btn btn-primary" type="submit">Crear</button>
+        </form>
+      </div>
+    </div>
+</div>
